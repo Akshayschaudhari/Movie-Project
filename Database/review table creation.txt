@@ -1,0 +1,21 @@
+-- Review Table
+
+CREATE TABLE review(
+review varchar(160)  Not null,
+userId int Not null,
+movieId int  Not null,
+TnD timestamp Not null default CURRENT_TIMESTAMP,
+username varchar(30) default 'anonymous',
+FOREIGN KEY(movieId) REFERENCES movie(movieId),
+FOREIGN KEY(userId) REFERENCES user(userId),
+CONSTRAINT UC_userNmovie UNIQUE(userId, movieId));
+
+
+/*
+Insert into review(userId, movieId, review, username) values(1, 1, "movie 1 review by user 1", "User0001");
+Insert into review(userId, movieId, review, username) values(1, 2, "movie 2 review by user 1", "User0001");
+Insert into review(userId, movieId, review, username) values(1, 3, "movie 3 review by user 1", "User0001");
+Insert into review(userId, movieId, review, username) values(2, 1, "movie 1 review by user 2", "User0002");
+Insert into review(userId, movieId, review, username) values(2, 2, "movie 2 review by user 2", "User0002");
+Insert into review(userId, movieId, review, username) values(2, 3, "movie 3 review by user 2", "User0002");
+*/

@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "45e292b4-6987-425b-875c-c31a79e49453",
+		"name": "project_movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21164516"
+	},
+	"item": [
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FirstName\" : \"aniket\",\r\n    \"LastName\" : \"madwe\",\r\n    \"mobile_no\": 56545158, \r\n    \"email\" : \"aniket@gmail\",\r\n    \"password\": \"pass@1234\",\r\n    \"role\" : \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4000/user/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"abhi@gmail\",\r\n    \"password\" : \"pass@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4000/user/signin",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Theater",
+			"item": [
+				{
+					"name": "add theater",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "tokens",
+								"value": "{{tokens}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"theaterName\" : \"Theater 2\", \r\n  \"pincode\" : 4215601,\r\n   \"address\" : \"plot 15\",\r\n   \"city\" : \"pune\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4000/Theater/addtheater",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4000",
+							"path": [
+								"Theater",
+								"addtheater"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add screen",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "tokens",
+								"value": "{{tokens}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"screenName\" : \"B1\", \r\n    \"theaterId\": 2, \r\n    \"silver_seat_qty\" : 60, \r\n    \"golden_seat_qty\" : 70\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4000/Theater/addscreen",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4000",
+							"path": [
+								"Theater",
+								"addscreen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Show",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "tokens",
+								"value": "{{tokens}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"MovieId\" : 1,\r\n     \"show_start_Time\" : \"11:00:00\", \r\n     \"show_date\" : \"2022-06-06\", \r\n     \"screenId\" : 2, \r\n     \"silver_seat_price\" : 80, \r\n     \"golden_seat_price\" : 120,\r\n     \"show_end_Time\" : \"02:00:00\"\r\n}\r\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4000/Theater/addshow",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4000",
+							"path": [
+								"Theater",
+								"addshow"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "tokens",
+								"value": "{{tokens}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4000/Theater/getmovie/Baahubali: The Beginning",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4000",
+							"path": [
+								"Theater",
+								"getmovie",
+								"Baahubali: The Beginning"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Theater",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "tokens",
+								"value": "{{tokens}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4000/Theater/gettheater/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4000",
+							"path": [
+								"Theater",
+								"gettheater",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "tokens",
+								"value": "{{tokens}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4000/Theater/getseatobj/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4000",
+							"path": [
+								"Theater",
+								"getseatobj",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.0:4000",
+			"type": "string"
+		},
+		{
+			"key": "tokens",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1MzkxMzY5NX0.gGdlaY4jK_-AgnROymjXJCAVs87Q3iJ2fCaI9qKKtDM",
+			"type": "string"
+		}
+	]
+}
