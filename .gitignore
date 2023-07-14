@@ -1,2 +1,3 @@
 /.metadata/
 **/uploads/*
+/Backend/node_modules
